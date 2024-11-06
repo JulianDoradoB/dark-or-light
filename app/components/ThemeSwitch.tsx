@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
-import { FiSun, FiMoon } from 'react-icons/fi';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { GrAction, GrActions } from "react-icons/gr";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
@@ -25,10 +25,10 @@ export default function ThemeSwitch() {
     );
 
   if (resolvedTheme === 'dark') {
-    return <FiSun className='text-3xl' onClick={() => setTheme('light')} />;
+    return <GrActions className='text-3xl' onClick={() => setTheme('light')} />;
   }
 
   if (resolvedTheme === 'light') {
-    return <FiMoon className='text-3xl' onClick={() => setTheme('dark')} />;
+    return <GrAction className='text-3xl' onClick={() => setTheme('dark')} />;
   }
 }
